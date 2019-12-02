@@ -1,6 +1,6 @@
 import pygame
 
-from manager.game_manager import game_manager
+from manager import game_manager
 from screen import Screen
 
 
@@ -13,6 +13,8 @@ class GameScreen(Screen):
         self.ball_rect = self.ball.get_rect()
 
     def update(self, dt):
-        game_manager.update()
-        self.manager.display.fill(self.color)
-        self.manager.display.blit(self.ball, self.ball_rect)
+        game_manager.update_event()
+        game_manager.update(dt)
+        game_manager.draw()
+        # self.manager.display.fill(self.color)
+        # self.manager.display.blit(self.ball, self.ball_rect)

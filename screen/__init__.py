@@ -17,7 +17,6 @@ class ScreenManager:
 
     def update(self, dt):
         self.screen.update(dt)
-        self.screen.draw()
 
     def replace_screen(self, screen_cls):
         self.screen = screen_cls(self)
